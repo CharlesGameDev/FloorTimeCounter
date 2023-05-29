@@ -17,6 +17,8 @@ namespace FloorTimeCounter
         public void OnLoadLocal(LocalSettings s) => LS = s;
         public LocalSettings OnSaveLocal() => LS;
 
+        string FloorFrames => $"Floor Frames: {LS.framesGrounded}\n{SecondsGrounded}";
+
         public override void Initialize()
         {
             On.HeroController.SceneInit += HeroController_SceneInit;
@@ -46,7 +48,7 @@ namespace FloorTimeCounter
 
             text = new(layout)
             {
-                Text = $"Floor Frames: {LS.framesGrounded}\n{SecondsGrounded}",
+                Text = FloorFrames,
                 Font = UI.TrajanNormal,
                 FontSize = 25
             };
@@ -60,7 +62,7 @@ namespace FloorTimeCounter
             if (self.CheckTouchingGround() && self.acceptingInput && !GameManager.instance.isPaused)
             {
                 LS.framesGrounded++;
-                text.Text = $"Floor Frames: {LS.framesGrounded}\n{SecondsGrounded}";
+                text.Text = FloorFrames;
             }
         }
     }
