@@ -1,3 +1,3 @@
-# Remove Haunted Foes
+# Floor Time Counter
 
-This mod has been replaced by [BetterGodhomeMusic](https://github.com/CharlesGameDev/BetterGodhomeMusic)
+Adds a counter for how many frames you've touched the ground.
